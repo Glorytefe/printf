@@ -5,13 +5,10 @@
  *
  * Return: 1 (success), -1 (failure)
  */
- int _putcha(char c)
+ int _putchar(char c)
 {
-	int retval;
 
-	retval = write(1, &c, 1);
-
-	return (retval);
+	return (write(1, &c, 1));
 }
 
 /**
