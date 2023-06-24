@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 /**
  * struct printer - Struct printer
@@ -19,7 +20,7 @@ typedef struct printer
 
 int _putchar(char c);
 int print_str(va_list ptr);
-int print_selector(const char *format, va_list ptr);
+int (*print_selector(const char *format))(va_list);
 int _printf(const char *format, ...);
 
 #endif
