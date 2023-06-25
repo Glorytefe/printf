@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int i;
-/*	int (*printer)(va_list);*/
+	int (*printer)(va_list);
 	int char_count = 0;
 
 	if (format == NULL)
@@ -29,13 +29,15 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i + 1] != '\0')
 			{
-/*				printer = print_selector(format[i + 1]); */
-				char_count += string_printer(args);
+				printer = print_selector(format[i + 1]);
+				if (printer == NULL)
+					break;
+				char_count += printer(args);
 			}
 			else
 				break;
 		}
-		else
+		else if (i == 0 || format[i - 1] != '%')
 		{
 			char_count++;
 			_putchar(format[i]);
