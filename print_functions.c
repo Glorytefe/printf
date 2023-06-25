@@ -58,7 +58,7 @@ int string_printer(va_list args)
  * int_recurse - prints multiple digit numbers in the right order
  * @num: number to print
  *
- * Return: number of digits in number
+ * Return:  amount of digits in number
  */
 int int_recurse(int num)
 {
@@ -78,7 +78,7 @@ int int_recurse(int num)
 	}
 }
 
-n
+
 
 /**
  * int_printer - prints integers
