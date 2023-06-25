@@ -23,7 +23,7 @@ int (*print_selector(char s))(va_list)
 	}
 
 	if (i > list_len)
-		return (NULL);
+		return (p_list[0].f);
 
 	return (p_list[i].f);
 
