@@ -13,7 +13,6 @@ int (*print_selector(char s))(va_list)
 		{"s", string_printer},
 		{"d", int_printer},
 		{"i", int_printer},
-/*		{"NULL", "NULL"} */
 	};
 
 	unsigned int list_len = sizeof(p_list) / sizeof(p_list[0]);
@@ -24,8 +23,8 @@ int (*print_selector(char s))(va_list)
 	}
 
 	if (i > list_len)
-		return(NULL);
+		return (NULL);
 
-	return(p_list[i].f);
+	return (p_list[i].f);
 
 }
