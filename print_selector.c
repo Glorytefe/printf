@@ -9,13 +9,12 @@ int (*print_selector(char s))(va_list)
 {
 	unsigned int i = 0;
 	printer p_list[] = {
-		{"c", _putchar},
+		{"c", char_printer},
 		{"s", string_printer},
 		{"d", int_printer},
 		{"i", int_printer},
-		{"NULL", "NULL"}
 	};
-	
+
 	unsigned int list_len = sizeof(p_list) / sizeof(p_list[0]);
 
 	while (i < list_len && (p_list[i].format[0] != s))
@@ -24,8 +23,8 @@ int (*print_selector(char s))(va_list)
 	}
 
 	if (i > list_len)
-		return(NULL);
-	
-	return(p_list[i].f);
+		return (p_list[0].f);
+
+	return (p_list[i].f);
 
 }

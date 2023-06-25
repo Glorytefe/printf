@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _putchar - custom putchar function
- * @C: char to printed
+ * @c: char to printed
  *
  * Return: 1 (success), -1 (failure)
  */
@@ -19,7 +19,7 @@
  */
 int char_printer(va_list args)
 {
-	char c = va_arg(list, int);
+	char c = va_arg(args, int);
 
 	return(_putchar(c));
 }
@@ -37,17 +37,17 @@ int string_printer(va_list args)
 {
 	char *s = va_arg(args, char *);
 	int i;
-	
+
 	if (s != NULL)
 	{
 		for (i = 0; s[i] != '\0'; i++)
 		{
-			_putchar(c);
+			_putchar(s[i]);
 		}
 		return (i);
 	}
 	else
-	{	
+	{
 		return (-1);
 	}
 
@@ -63,19 +63,16 @@ int string_printer(va_list args)
 int int_recurse(int num)
 {
 	int n;
+	int count;
 
 	if (num == 0)
 	{
 		return(0);
 	}
-	else
-	{
-		n = num / 10;
-		count = int_recurse(n);
-		count += _putchar((num % 10) + '0');
-		return (count);
-		
-	}
+       	n = num / 10;
+       	count = int_recurse(n);
+       	count += _putchar((num % 10) + '0');
+	return (count);
 }
 
 
@@ -89,15 +86,15 @@ int int_recurse(int num)
 int int_printer(va_list args)
 {
 	int num, counter = 0;
-	
 
-	num = va_arg(digits, int);
+
+	num = va_arg(args, int);
 
 	if (num < 0)
 	{
 		counter += _putchar('-');
 	}
-	
+
 	if (num % 10 == num)
 	{
 		counter += _putchar(num + '0');
