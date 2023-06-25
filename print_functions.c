@@ -53,3 +53,59 @@ int string_printer(va_list args)
 
 
 }
+
+/**
+ * int_recurse - prints multiple digit numbers in the right order
+ * @num: number to print
+ *
+ * Return: number of digits in number
+ */
+int int_recurse(int num)
+{
+	int n;
+
+	if (num == 0)
+	{
+		return(0);
+	}
+	else
+	{
+		n = num / 10;
+		count = int_recurse(n);
+		count += _putchar((num % 10) + '0');
+		return (count);
+		
+	}
+}
+
+n
+
+/**
+ * int_printer - prints integers
+ * @args: list where int to be printed is located
+ *
+ * Return: number of digits printed and sign if any
+ */
+int int_printer(va_list args)
+{
+	int num, counter = 0;
+	
+
+	num = va_arg(digits, int);
+
+	if (num < 0)
+	{
+		counter += _putchar('-');
+	}
+	
+	if (num % 10 == num)
+	{
+		counter += _putchar(num + '0');
+	}
+	else
+	{
+		counter += int_recurse(num);
+	}
+
+	return (counter);
+}

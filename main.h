@@ -19,6 +19,8 @@ typedef struct printer
 } printer;
 
 int _putchar(char c);
+int char_printer(va_list args);
+int int_printer(va_list args);
 int string_printer(va_list args);
 int (*print_selector(char s))(va_list);
 int _printf(const char *format, ...);
