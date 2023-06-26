@@ -69,9 +69,13 @@ int int_recurse(int num)
 	{
 		return (0);
 	}
+
 	n = num / 10;
 	count = int_recurse(n);
-	count += _putchar((num % 10) + '0');
+	if(num < 0)
+	       	count += _putchar('0' - (num % 10));
+	else
+		count += _putchar((num % 10) + '0');
 	return (count);
 }
 
@@ -93,7 +97,7 @@ int int_printer(va_list args)
 	if (num < 0)
 	{
 		counter += _putchar('-');
-		num == INT_MIN ? num = (-1 * (num + 1)) : (num *= (-1));
+		num == INT_MIN ? num *= 1 : (num *= -1);
 
 	}
 
