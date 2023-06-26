@@ -5,7 +5,7 @@
  *
  * Return: 1 (success), -1 (failure)
  */
- int _putchar(char c)
+int _putchar(char c)
 {
 
 	return (write(1, &c, 1));
@@ -21,7 +21,7 @@ int char_printer(va_list args)
 {
 	char c = va_arg(args, int);
 
-	return(_putchar(c));
+	return (_putchar(c));
 }
 
 
@@ -67,11 +67,15 @@ int int_recurse(int num)
 
 	if (num == 0)
 	{
-		return(0);
+		return (0);
 	}
-       	n = num / 10;
-       	count = int_recurse(n);
-       	count += _putchar((num % 10) + '0');
+
+	n = num / 10;
+	count = int_recurse(n);
+	if(num < 0)
+	       	count += _putchar('0' - (num % 10));
+	else
+		count += _putchar((num % 10) + '0');
 	return (count);
 }
 
@@ -93,6 +97,8 @@ int int_printer(va_list args)
 	if (num < 0)
 	{
 		counter += _putchar('-');
+		num == INT_MIN ? num *= 1 : (num *= -1);
+
 	}
 
 	if (num % 10 == num)
