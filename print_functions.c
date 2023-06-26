@@ -93,6 +93,8 @@ int int_printer(va_list args)
 	if (num < 0)
 	{
 		counter += _putchar('-');
+		num == INT_MIN ? num = (-1 *(num + 1)) : (num *= (-1));
+		
 	}
 
 	if (num % 10 == num)
