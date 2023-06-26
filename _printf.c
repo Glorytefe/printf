@@ -31,6 +31,13 @@ int _printf(const char *format, ...)
 			else if (format[i] != '\0')
 			{
 				printer = print_selector(format[i]);
+				if (printer == NULL)
+				{
+					char_count += _putchar(format[i - 1]);
+					char_count += _putchar(format[i]);
+					continue;
+				}
+
 				char_count += printer(args);
 			}
 			else

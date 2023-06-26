@@ -38,7 +38,7 @@ int string_printer(va_list args)
 	char *s = va_arg(args, char *);
 	int i;
 
-	if (s != NULL)
+	if (s != NULL )
 	{
 		for (i = 0; s[i] != '\0'; i++)
 		{
