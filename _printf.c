@@ -10,9 +10,8 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i;
 	int (*printer)(va_list);
-	int char_count = 0;
+	int char_count = 0, i;
 
 	if (format == NULL)
 		return (-1);

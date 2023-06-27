@@ -72,8 +72,8 @@ int int_recurse(int num)
 
 	n = num / 10;
 	count = int_recurse(n);
-	if(num < 0)
-	       	count += _putchar('0' - (num % 10));
+	if (num < 0)
+		count += _putchar('0' - (num % 10));
 	else
 		count += _putchar((num % 10) + '0');
 	return (count);
