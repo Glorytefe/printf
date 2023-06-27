@@ -38,12 +38,14 @@ int _printf(const char *format, ...)
 				char_count += printer(args);
 			}
 			else
+			{
+				return (char_count = -1);
 				break;
+			}
 		}
 		else
 		{
-			char_count++;
-			_putchar(format[i]);
+			char_count += _putchar(format[i]);
 		}
 	}
 	return (char_count);
