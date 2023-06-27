@@ -42,7 +42,7 @@ int string_printer(va_list args)
 	{
 		for (i = 0; s[i] != '\0'; i++)
 		{
-				_putchar(s[i]);
+			_putchar(s[i]);
 		}
 		return (i);
 	}
