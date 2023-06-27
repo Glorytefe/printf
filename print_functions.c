@@ -36,22 +36,27 @@ int char_printer(va_list args)
 int string_printer(va_list args)
 {
 	char *s = va_arg(args, char *);
-	int i;
+	int i, n = 0;
 
 	if (s != NULL)
 	{
 		for (i = 0; s[i] != '\0'; i++)
 		{
-			_putchar(s[i]);
+				_putchar(s[i]);
 		}
 		return (i);
 	}
 	else
 	{
-		return (-1);
+			_putchar('(');
+			_putchar('n');
+			_putchar('u');
+			_putchar('l');
+			_putchar('l');
+			_putchar(')');
+			n = 6;
+		return (n);
 	}
-
-
 }
 
 /**
